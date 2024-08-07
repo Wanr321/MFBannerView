@@ -550,6 +550,15 @@ NS_INLINE MFIndexSection MFMakeIndexSection(NSInteger index, NSInteger section) 
     }
 }
 
+#pragma mark - UICollectionViewDelegateShouldScrollToTop
+
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView{
+    if ([scrollView isKindOfClass:[UICollectionView class]]) {
+        return NO;
+    }
+    return YES;
+}
+
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
